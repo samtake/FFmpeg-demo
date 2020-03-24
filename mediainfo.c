@@ -7,14 +7,16 @@ int main(int argc, char *argv[])
 
     AVFormatContext *fmt_ctx = NULL;
 
-    if(argc < 2){
-        fprintf(stderr, "[Usage]you should input media file!\n");
-        return -1;
-    }
+    // if(argc < 2){
+    //     fprintf(stderr, "[Usage]you should input media file!\n");
+    //     return -1;
+    // }
 
-    char *src_filename = argv[1];
+    // char *src_filename = argv[1];
 
     av_register_all();
+
+    char src_filename[] = "./test.mp4";
 
     /* open input file, and allocate format context */
     if ((err_code=avformat_open_input(&fmt_ctx, src_filename, NULL, NULL)) < 0) {
